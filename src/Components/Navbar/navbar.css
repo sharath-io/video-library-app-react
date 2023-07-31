@@ -1,0 +1,11 @@
+.navbar{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-link{
+    margin: 1rem 0;
+    font-size: 20px;
+    width: 15rem;
+}
+
