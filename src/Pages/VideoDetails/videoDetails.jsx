@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import './videoDetails.css';
 import { DataContext } from '../../contexts/dataContext';
-import { VideoDetailsCard } from '../../Components';
+import {  VideoDetailsCard } from '../../Components';
 
 export function VideoDetails(){
     const {videoId} = useParams();

@@ -18,3 +18,14 @@
 .info-heading .title-info{
     margin: 1rem;
 }
+
+.each-note{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    font-size: 20px;
+}
+
+.each-note .icon{
+    margin-left: 1rem;
+}

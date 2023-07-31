@@ -7,12 +7,15 @@ import { MdOutlineWatchLater } from "react-icons/md";
 
 import './videoDetailsCard.css';
 import {isVideoInWatchlater} from '../../utils/isVideoInWatchlater';
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { DataContext } from "../../contexts/dataContext";
+import { Notes } from '../Notes/notes';
 
 export function VideoDetailsCard({video}){
     const {_id,title,src} = video;
     const {state, dispatch} = useContext(DataContext);
+    const [noteModal, toggleNoteModal] = useState(false);
+    console.log(state.notes)
     return (
         <div>
             <iframe width="700" height="500" src={src} frameborder="0" allowfullscreen title={title}></iframe>
@@ -25,20 +28,30 @@ export function VideoDetailsCard({video}){
                 <div className="details-icon">
                   {
                     isVideoInWatchlater(state.watchlater,_id)
-                      ? <MdWatchLater className="icon" onClick={()=> 
+                      ? <MdWatchLater className="icon cursr" onClick={()=> 
                         dispatch({type:'REMOVE_FROM_WATCHLATER', payload:_id})}/>
-                      : <MdOutlineWatchLater className="icon"   onClick={()=> 
+                      : <MdOutlineWatchLater className="icon cursr"   onClick={()=> 
                         dispatch({type:'ADD_TO_WATCHLATER', payload:_id})}/>
                   }
-                  <MdPlaylistAdd className='icon'/>
-                  <MdModeEdit  className='icon'/>
-                 
-                </div>
-                
-                
+                  <MdPlaylistAdd className='icon cursr'/>
+                  <MdEditNote  className='icon cursr' onClick={() => toggleNoteModal(true)}/>
 
+                </div>
               </div>
               <hr/>
+               <h1>My Notes</h1>
+                <Notes noteVideoId={_id} shown={noteModal} close={() => toggleNoteModal(false)}/>
+                <ul className='note-container'>
+                  {
+                    state.notes.map(note => <li key={note.noteId} className='each-note'>
+                      <p>{note.noteDescription}</p>
+                      <div>
+                        <MdModeEdit className='icon cursr'/>
+                        <MdDelete className='icon cursr' onClick={()=> dispatch({type:'DELETE_NOTE', payload:note.noteId})}/>
+                      </div>
+                    </li>)
+                  }
+                </ul>
         </div>
     )
 }
