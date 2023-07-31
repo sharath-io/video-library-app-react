@@ -12,3 +12,7 @@
 .main-page >*{
   margin: 1rem 2rem
 }
+
+li{
+  list-style-type: none;
+}
