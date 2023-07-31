@@ -18,3 +18,22 @@
 .video-details .video-info{
     margin-left: 10px;
 }
+
+.video-thumbnail{
+    position: relative;
+    width: 17rem;
+}
+
+.video-thumbnail-img{
+    width: 100%;
+}
+.watchlater-icon{
+    position: absolute;
+    top: 0;
+    left: 82.5%;
+    background-color: white;
+    color: #4299e1;
+    width: 3rem;
+    height: 2rem;
+    border-bottom-left-radius: 10px;
+}
