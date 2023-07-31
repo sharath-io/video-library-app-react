@@ -16,3 +16,7 @@
 li{
   list-style-type: none;
 }
+
+.cursr{
+  cursor: pointer;
+}
