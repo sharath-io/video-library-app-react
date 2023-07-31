@@ -2,6 +2,7 @@ import { useContext } from 'react';
 
 import './home.css';
 import { DataContext } from '../../contexts/dataContext';
+import { CategoryCard } from '../../Components';
 
 export function Home(){
     const {state} = useContext(DataContext);
@@ -11,8 +12,7 @@ export function Home(){
             <ul className='categories-container'>
                 {
                     state.categories.map(list => <li>
-                        <img src={list.thumbnail} alt={list.category}/>
-                        <p>{list.category}</p>
+                        <CategoryCard list={list}/>
                     </li>)
                 }
             </ul>
