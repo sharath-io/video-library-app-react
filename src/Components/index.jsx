@@ -1,4 +1,5 @@
 import {Navbar} from './Navbar/navbar';
 import { CategoryCard } from './CategoryCard/categoryCard';
+import { VideoCard } from './VideoCard/videoCard';
 
-export {Navbar,CategoryCard};
+export {Navbar,CategoryCard, VideoCard};

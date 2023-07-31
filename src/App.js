@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/explore' element={<Explore/>}/>
-        <Route path='/videoListing' element={<VideoListing/>}/>
+        <Route path='/videoListing/:categoryName' element={<VideoListing/>}/>
         <Route path='/watchlater' element={<Watchlater/>}/>
         <Route path='/playlist' element={<Playlist/>}/>
       </Routes>

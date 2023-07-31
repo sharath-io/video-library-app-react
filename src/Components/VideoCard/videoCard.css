@@ -1,0 +1,20 @@
+.video-card{
+    width: 18rem;
+}
+
+.avatar{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    border:1px solid #27ae60;
+}
+
+.video-details{
+    display: flex;
+    justify-content: space-around;
+}
+
+.video-details .video-info{
+    margin: 10px 5px;
+}
